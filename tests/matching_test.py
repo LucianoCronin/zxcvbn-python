@@ -1,4 +1,4 @@
-from unittest import TestCase
+from unittest#import TestCase
 
 from zxcvbn import adjacency_graphs
 from zxcvbn import matching
@@ -25,7 +25,7 @@ def check_matches(prefix, matches, pattern_names, patterns, ijs, props):
     if isinstance(pattern_names, str):
         # shortcut: if checking for a list of the same type of patterns,
         # allow passing a string 'pat' instead of array ['pat', 'pat', ...]
-        pattern_names = [pattern_names] * len(patterns)
+        pattern_names = [pattern_names] # len(patterns)
 
     is_equal_len_args = len(pattern_names) == len(patterns) == len(ijs)
     for prop, lst in props.items():
@@ -117,7 +117,7 @@ def test_dictionary_matching():
             '8': 2,
             '99': 3,
             '$': 4,
-            'asdf1234&*': 5,
+            'asdf1234&#': 5,
         }
     }
 
@@ -591,3 +591,4 @@ def test_omnimatch():
             password, pattern_name, i, j
         )
         assert included, msg
+ 
